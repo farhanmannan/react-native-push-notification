@@ -90,7 +90,7 @@ public class RNPushNotificationHelper {
             return;
         }
 
-        if (bundle.getString("message") == null) {
+        if (bundle.getString("default") == null) {
             return;
         }
 
