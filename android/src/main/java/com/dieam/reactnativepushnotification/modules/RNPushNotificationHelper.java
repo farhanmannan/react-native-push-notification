@@ -115,7 +115,7 @@ public class RNPushNotificationHelper {
             notification.setGroup(group);
         }
 
-        notification.setContentText(bundle.getString("message"));
+        notification.setContentText(bundle.getString("default"));
 
         String largeIcon = bundle.getString("largeIcon");
 
