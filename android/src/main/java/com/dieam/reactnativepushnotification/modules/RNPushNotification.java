@@ -61,7 +61,6 @@ public class RNPushNotification extends ReactContextBaseJavaModule implements Ac
         }
     }
 
-    @Override
     public void onNewIntent(Intent intent) {
         if (intent.hasExtra("notification")) {
             Bundle bundle = intent.getBundleExtra("notification");
@@ -166,7 +165,14 @@ public class RNPushNotification extends ReactContextBaseJavaModule implements Ac
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         // Ignored, required to implement ActivityEventListener
+    }
+
+    @ReactMethod
+    public void popInitialNotification() {
+        Intent intent=new Intent();
+        intent.setAction("com.kametventures.driven.POP_NOTIFICATION");
+        getCurrentActivity().sendBroadcast(intent);
     }
 }
